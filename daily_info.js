@@ -8,16 +8,16 @@ import lodash from "lodash";
 import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
 
-//,'754205675'
+
 let groupnumber_list = [1169863627]//开启定时推送的群号
 
 //let rule =`秒 分 时 * * ?` 改完记得重启一下
 //auto_send 是每日群早报开关，1开0关
-let rule =`20 18 11 * * ?`
+let rule =`0 20 7 * * ?`
 let auto_send = 1
 
 
-let url = `file://${__dirname}/daily_info_api/resource/common/daily_info.html`
+let url = `https://www.pro-ivan.com/api/daily/resource/common/daily_info.html`
 let job = schedule.scheduleJob(rule, async (e) => {
     console.log('日程已获取');
     
@@ -122,6 +122,7 @@ export class moyu extends plugin {
                'networkidle2'           //在 500ms 内网络连接个数不超过 2 个
            ]
         });
+        //await page.waitForSelector('#done');
         await page.setViewport({
             width: 850,
             height: 920
