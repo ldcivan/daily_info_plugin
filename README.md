@@ -1,8 +1,8 @@
-# daily_info_plugin(测试中(面板无法渲染进js))
+# daily_info_plugin(不建议使用)
 以Yunzai-Bot为基础的日程提醒js插件，默认版式是为大学生设计的
 
 # 安装与更新
-请将js文件以及api文件夹放置在/plugin/example下，重启Yunzai-Bot后即可使用
+请将js文件放置在/plugin/example下，api文件夹需要部署到网站上（所以不建议使用）。重启Yunzai-Bot后即可使用。
 
 不提供自动更新，请手动下载更新
 
