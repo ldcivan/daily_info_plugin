@@ -19,6 +19,7 @@ request.onload = function () {/*XHR对象获取到返回信息后执行*/
         renderNotice(data);
         renderTime(data);
         renderYouth(data);
+        document.getElementById("flag").innerHTML = '<div id="done"></div>';
     }
 
 }
