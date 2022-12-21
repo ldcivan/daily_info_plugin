@@ -17,7 +17,7 @@
 ### #每日日程
 可选择刊登TO DO，时间表，并设置了独立的青年大学习开关（
 
-以上内容可在/resource/common/data.json内设置
+以上内容可在/resource/common/data.json内设置（注意首先修改/resource/common/daily_info.html内的url为你的api所在地）
 
 默认版式可参考<a href="https://www.pro-ivan.com/api/daily/resource/common/daily_info.html">此处</a>（推荐宽高：850*920）
 
