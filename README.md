@@ -1,4 +1,4 @@
-# daily_info_plugin
+# daily_info_plugin(测试中)
 以Yunzai-Bot为基础的日程提醒js插件，默认版式是为大学生设计的
 
 # 安装与更新
