@@ -32,6 +32,15 @@ catch (Exception $e) {
     exit();
 }
 
+try{
+    for ($i = 0; $i < 12; $i++){
+        $data["time_set"][$i] = $_POST["time_set".$i];
+    }
+}
+catch (Exception $e) {
+    exit();
+}
+
 if ($_POST["big_notice"] == 1)
     $data["big_notice"]=$_POST["big_notice"];
 else {

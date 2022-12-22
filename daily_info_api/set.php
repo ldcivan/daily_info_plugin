@@ -50,7 +50,19 @@ try{
 catch (Exception $e) {
     exit();
 }
-echo "<br><br><hr><h3>杂项</h3>主标题：<input id= 'title' name='title' type='text' value='";
+echo "</div><h3>课表时间段设置(留空则使用默认时间;第六空为午休时间，填0则不设置午休)</h3><div class='content'>";
+try{
+    for ($i = 0; $i < 12; $i++){
+        echo "<input id= 'time_set".$i."' name='time_set".$i."' type='text' style='width:12%;'; value='";
+        print $data["time_set"][$i];
+        echo "'>";
+    }
+}
+catch (Exception $e) {
+    exit();
+}
+
+echo "</div><br><br><hr><h3>杂项</h3><div class='content'>主标题：<input id= 'title' name='title' type='text' value='";
 print $data["title"];
 echo "'><br>备忘录标题：<input id= 'subtitle' name='subtitle' type='text' value='";
 print $data["subtitle"];
@@ -60,12 +72,12 @@ echo "'><br>头像url(留空则使用默认头像)：<input id= 'head_img' name=
 print $data["head_img"];
 echo "'><br>背景url(留空则使用默认背景)：<input id= 'bg_img' name='bg_img' type='text' value='";
 print $data["bg_img"];
-echo "'><br>可在<a href='http://www.pro-ivan.com/new-upload.html'>此处</a>上传头像或背景，并自行复制链接填入框体";
+echo "'><br>可在<a href='http://www.pro-ivan.com/new-upload.html'>此处</a>上传头像或背景，并自行复制链接填入框体</div>";
 
 echo "<hr>请确认好您的jsonid是：<input id= 'json_id' name='json_id' type='text' value='";
 echo $json_id;
 echo "' style='width:30%;'><br>*若非第一次配置，请勿随意更改上面一栏以免保存错误";
-echo "<br><br><button type='submit' style='width:70px;height:30px;'>确定更新</button></div></form><button style='width:70px;height:30px;margin-left:20px;width:70px;height:30px;' onclick='preview()'>查看效果</button>";
+echo "<br><br><button type='submit' style='width:70px;height:30px;'>确定更新</button></div></form><button style='width:70px;height:30px;margin-left:0px;width:70px;height:30px;' onclick='preview()'>查看效果</button>";
 exit ('<script>function preview(){window.open("./resource/common/daily_info.html?json_id='.$json_id.'", "_blank", "scrollbars=yes,resizable=1,modal=false,alwaysRaised=yes,width=850,height=920");}</script>');
 
 ?>

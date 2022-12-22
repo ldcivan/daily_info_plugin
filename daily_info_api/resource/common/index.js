@@ -24,6 +24,7 @@ request.onload = function () {/*XHR对象获取到返回信息后执行*/
         console.log(data);
         
         renderTimetable(data);
+        renderTimeSet(data);
         renderNotice(data);
         renderTime(data);
         renderBigNotice(data);
@@ -55,6 +56,18 @@ function renderTimetable (data) {
     document.getElementById("class10").innerHTML = data.timetable[day].class10;
     document.getElementById("class11").innerHTML = data.timetable[day].class11;
     if (day == 5|day == 6) {
+        document.getElementById("class0").innerHTML = "&nbsp;<br>&nbsp;";
+    }
+}
+
+function renderTimeSet (data) {
+    for (var i = 0; i < 12; i++){
+        if (data.time_set[i]!=''){
+            document.getElementById("time_set"+String(i)).innerHTML = data.time_set[i];
+        }
+    }
+    if (data.time_set[5] == "0"){
+        document.getElementById("time_set5").innerHTML = "&nbsp;";
         document.getElementById("class0").innerHTML = "&nbsp;<br>&nbsp;";
     }
 }
