@@ -9,7 +9,7 @@ else{
     echo "创建id为".$json_id."的json文件";
     fopen("./resource/common/json/".$json_id.".json", "w");
     fclose("./resource/common/json/".$json_id.".json");
-    $json_string = file_get_contents("./resource/common/json/".$json_id.".json");
+    $json_string = file_get_contents("./resource/common/default.json");
 }
 $data = json_decode($json_string,true);// 把json字符串转成php数组
 try{
