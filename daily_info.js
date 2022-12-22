@@ -18,7 +18,7 @@ let auto_send = 1
 
 
 var json_id = `data` //id名，可在https://www.pro-ivan.com/api/daily/set.php?json_id={你想要的id}进行初始化
-let url = `https://www.pro-ivan.com/api/daily/?json_id=`+json_id //api地址
+let url = `http://www.pro-ivan.com/api/daily/?json_id=`+json_id //api地址，最好不要https免得报错
 let job = schedule.scheduleJob(rule, async (e) => {
     console.log('日程已获取');
     
