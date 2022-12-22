@@ -24,10 +24,14 @@
 默认版式可参考<a href="https://www.pro-ivan.com/api/daily/resource/common/daily_info.html?json_id=data" target="_blank">此处</a>（推荐宽高：850*920）
 
 使用自建api时，默认版式可通过更改/resource/common/daily_info.html实现（代码比较乱，需要一点html基础才方便改；真改坏了就回来再下一个吧，做好data.json的备份就行）
-### 定时发送面板
+
+### #日程参数/#日程帮助
+顾名思义，查看配置参数以及插件使用方法的指令
+
+### 关于定时发送面板
 可设置定时发送面板，该功能可手动关闭
 
-以上内容可在/daily_info.js内设置
+以上内容可在/daily_info.js内设置，具体参照js内注释
 
 # 其他
 感谢：
