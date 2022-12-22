@@ -18,7 +18,7 @@ let auto_send = 1
 
 
 var json_id = `data` //id名，可在https://www.pro-ivan.com/api/daily/set.php?json_id={你想要的id}进行初始化
-let url = `http://www.pro-ivan.com/api/daily/?json_id=`+json_id //api地址，最好不要https免得报错
+let url = `http://www.pro-ivan.com/api/daily/?json_id=`+json_id //api地址
 let job = schedule.scheduleJob(rule, async (e) => {
     console.log('日程已获取');
     
@@ -77,7 +77,7 @@ let job = schedule.scheduleJob(rule, async (e) => {
 }
 );
 
-export class moyu extends plugin {
+export class daily extends plugin {
   constructor () {
     super({
       /** 功能名称 */
@@ -93,13 +93,13 @@ export class moyu extends plugin {
           /** 命令正则匹配 */
           reg: '^#?(今日)?(每日)?(今天)?的?(日程|课程)$',
           /** 执行方法 */
-          fnc: 'moyu'
+          fnc: 'daily'
         }
       ]
     })
   }
 
-  async moyu (e) {
+  async daily (e) {
         const puppeteer = require('puppeteer');
 
         const browser = await puppeteer.launch({
