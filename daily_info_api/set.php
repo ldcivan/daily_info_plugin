@@ -12,11 +12,18 @@
 $arr = "notice";
 $json_id = $_GET["json_id"];
 
-if(is_file("./resource/common/json/".$json_id.".json")){
-    $json_string = file_get_contents("./resource/common/json/".$json_id.".json");// 从文件中读取数据到php变量
+if($_GET["json_id"]){
+    if(is_file("./resource/common/json/".$json_id.".json")){
+        echo "<h5>请注意：您正在编辑一个已经存在的配置文件，ID为".$json_id."<br>请确保这确实是您的配置，以免给他人造成不便</h5>";
+        $json_string = file_get_contents("./resource/common/json/".$json_id.".json");// 从文件中读取数据到php变量
+    }
+    else{
+        echo "<h5>请注意：您正在创建一个新的配置文件，ID为".$json_id."<br>预览前请先更新一次，否则预览无效</h5>";
+        $json_string = file_get_contents("./resource/common/default.json");
+    }
 }
 else{
-    echo "<h5>请注意：您正在创建一个新的配置文件，ID为".$json_id."</h5><h5>预览前请先更新一次，否则预览无效</h5>";
+    echo "<h5>请注意：您尚未指定json_id<br>如果您是首次配置，可在下方确认json_id处填写您心仪的ID号，并填入daily_info.js<br >您的ID应该足够独特，以免与他人使用了相同ID</h5>";
     $json_string = file_get_contents("./resource/common/default.json");
 }
 $data = json_decode($json_string,true);// 把json字符串转成php数组
@@ -74,7 +81,7 @@ echo "'><br>背景url(留空则使用默认背景)：<input id= 'bg_img' name='b
 print $data["bg_img"];
 echo "'><br>可在<a href='http://www.pro-ivan.com/new-upload.html'>此处</a>上传头像或背景，并自行复制链接填入框体</div>";
 
-echo "<hr>请确认好您的jsonid是：<input id= 'json_id' name='json_id' type='text' value='";
+echo "<hr>请确认好您的json_id是：<input id= 'json_id' name='json_id' type='text' value='";
 echo $json_id;
 echo "' style='width:30%;'><br>*若非第一次配置，请勿随意更改上面一栏以免保存错误";
 echo "<br><br><button type='submit' style='width:70px;height:30px;'>确定更新</button></div></form><button style='width:70px;height:30px;margin-left:0px;width:70px;height:30px;' onclick='preview()'>查看效果</button>";

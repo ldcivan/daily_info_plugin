@@ -31,6 +31,12 @@ request.onload = function () {/*XHR对象获取到返回信息后执行*/
         document.getElementById("flag").innerHTML = '<div id="done"></div>';
         renderOther(data);
     }
+    else{
+        var path = window.location.pathname;
+        var page = path.split("/").pop();
+        if (page != "ERR.html")
+            window.location.href="./ERR.html";
+    }
 
 }
 
