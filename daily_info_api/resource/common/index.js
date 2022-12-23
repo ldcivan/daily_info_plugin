@@ -61,7 +61,7 @@ function renderTimetable (data) {
     document.getElementById("class9").innerHTML = data.timetable[day].class9;
     document.getElementById("class10").innerHTML = data.timetable[day].class10;
     document.getElementById("class11").innerHTML = data.timetable[day].class11;
-    if (day == 5|day == 6) {
+    if (day == 0|day == 6) {
         document.getElementById("class0").innerHTML = "&nbsp;<br>&nbsp;";
     }
 }
