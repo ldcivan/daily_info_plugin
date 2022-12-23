@@ -149,16 +149,22 @@ export class daily extends plugin {
   
   async config (e){
         if (e.isMaster){
+            let sentence = ""
             if (auto_send == 1)
-                var sentence = "是\n自动发送定时规则："+ rule;
+                sentence = "是\n激活自动发送的群："+groupnumber_list.toString()+"\n自动发送定时规则："+ rule;
             else
-                var sentence = "否"
+                sentence = "否"
             await this.reply("api地址："+api_url+"\nJson_ID："+json_id+"\n是否开启自动发送："+sentence);
         }else
             await this.reply("您不是Bot的管理者，无权查看配置信息");
   }
   
   async help (e){
-      await this.reply("输入 #每日日程 来拉取日程面板\n输入 #日程参数 可检视使用的api地址以及配置的json_id");
+      let sentence = ""
+      if (e.isMaster)
+        sentence = "\n输入 #日程参数 可检视使用的api地址以及配置的json_id"
+      else
+        sentence = ""
+      await this.reply("输入 #每日日程 来拉取日程面板"+sentence);
   }
 }
