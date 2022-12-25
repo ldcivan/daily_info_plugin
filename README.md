@@ -21,7 +21,9 @@
 
 （青年大学习开关功能已改成大字备忘录功能）
 
-以上内容可在 “ https://www.pro-ivan.com/api/daily/set.php?json_id={你想要的id} ” 内设置（如使用自己的api注意首先修改/resource/common/daily_info.html内的url为你的api所在地）
+以上内容可在 https://www.pro-ivan.com/api/daily/set.php?json_id= + 你想要的id 内设置（如，您想使用ID 114514，则访问...set.php/?json_id=114514)
+
+如使用自己的api注意首先修改/resource/common/daily_info.html内的url为你的api所在地
 
 默认版式可参考<a href="https://www.pro-ivan.com/api/daily/resource/common/daily_info.html?json_id=data" target="_blank">此处</a>（推荐宽高：850*920）
 
