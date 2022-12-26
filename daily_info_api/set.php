@@ -19,11 +19,15 @@ if($_GET["json_id"]){
     }
     else{
         echo "<h5>请注意：您正在创建一个新的配置文件，ID为<font color=red>".$json_id."</font><br>预览前请先更新一次，否则预览无效</h5>";
+        $isLegal = preg_match("/^[A-Za-z0-9]+$/",$_GET["json_id"]);
+        if(!$isLegal){
+            echo "<h5 style='color:red;'>您欲设置的ID似乎不是纯英文数字，这可能导致配置无法保存</h5>";
+        }
         $json_string = file_get_contents("./resource/common/default.json");
     }
 }
 else{
-    echo "<h5>请注意：您尚未指定json_id<br>如果您是首次配置，可在下方确认json_id处填写您心仪的ID号，并填入daily_info.js<br >您的ID应该足够独特，以免与他人使用了相同ID</h5>";
+    echo "<h5>请注意：您尚未指定json_id<br>如果您是首次配置，可在下方确认json_id处填写您心仪的ID号，并填入daily_info.js<br >您的ID应为纯数字并足够独特，以免与他人使用了相同ID</h5>";
     $json_string = file_get_contents("./resource/common/default.json");
 }
 $data = json_decode($json_string,true);// 把json字符串转成php数组
