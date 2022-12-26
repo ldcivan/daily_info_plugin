@@ -6,11 +6,17 @@ if(is_file("./resource/common/json/".$json_id.".json")){
     $json_string = file_get_contents("./resource/common/json/".$json_id.".json");// 从文件中读取数据到php变量
 }
 else{
-    if($_POST["json_id"]&&$_POST["json_id"]!=""){
-        echo "已创建id为".$json_id."的json文件<br>";
-        fopen("./resource/common/json/".$json_id.".json", "w");
-        fclose("./resource/common/json/".$json_id.".json");
-        $json_string = file_get_contents("./resource/common/default.json");
+    if($_POST["json_id"]!=""){
+        if(is_numeric($_POST["json_id"])){
+            echo "已创建id为".$json_id."的json文件<br>";
+            fopen("./resource/common/json/".$json_id.".json", "w");
+            fclose("./resource/common/json/".$json_id.".json");
+            $json_string = file_get_contents("./resource/common/default.json");
+        }
+        else{
+            echo "ID应该为纯数字！<br> 将在三秒后返回……";
+            exit ('<meta http-equiv="refresh" content="3;url=./set.php">'); 
+        }
     }
     else {
         echo "ID不可为空！<br> 将在三秒后返回……";
