@@ -25,7 +25,7 @@
 
 如使用自己的api注意首先修改/resource/common/daily_info.html内的url为你的api所在地
 
-默认版式可参考<a href="https://www.pro-ivan.com/api/daily/resource/common/daily_info.html?json_id=data" target="_blank">此处</a>（推荐宽高：850*920）
+默认版式可参考<a href="https://www.pro-ivan.com/api/daily/resource/common/daily_info.html?json_id=data" target="_blank">此处</a>（推荐宽高：1000*980）
 
 使用自建api时，默认版式可通过更改/resource/common/daily_info.html实现（代码比较乱，需要一点html基础才方便改；真改坏了就回来再下一个吧，做好data.json的备份就行）
 
