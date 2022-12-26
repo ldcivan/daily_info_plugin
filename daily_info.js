@@ -13,7 +13,7 @@ let groupnumber_list = [1169863627, 1149486254]//开启定时推送的群号
 
 //let rule =`秒 分 时 * * ?` 改完记得重启一下
 //auto_send 是每日群早报开关，1开0关
-let rule =`0 20 7 * * ?`
+let rule =`0 0 7 * * ?`
 let auto_send = 1
 
 
@@ -51,8 +51,8 @@ let job = schedule.scheduleJob(rule, async (e) => {
     });
     await page.waitForSelector('#done');
     await page.setViewport({
-        width: 850,
-        height: 920
+        width: 1000,
+        height: 980
     });
     await page.screenshot({
         path: `./daily_info.png`,
@@ -135,8 +135,8 @@ export class daily extends plugin {
         });
         await page.waitForSelector('#done');
         await page.setViewport({
-            width: 850,
-            height: 920
+            width: 1000,
+            height: 980
         });
 
     
