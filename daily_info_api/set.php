@@ -14,11 +14,11 @@ $json_id = $_GET["json_id"];
 
 if($_GET["json_id"]){
     if(is_file("./resource/common/json/".$json_id.".json")){
-        echo "<h5>请注意：您正在编辑一个已经存在的配置文件，ID为".$json_id."<br>请确保这确实是您的配置，以免给他人造成不便</h5>";
+        echo "<h5>请注意：您正在编辑一个已经存在的配置文件，ID为<font color=red>".$json_id."</font><br>请确保这确实是您的配置，以免给他人造成不便</h5>";
         $json_string = file_get_contents("./resource/common/json/".$json_id.".json");// 从文件中读取数据到php变量
     }
     else{
-        echo "<h5>请注意：您正在创建一个新的配置文件，ID为".$json_id."<br>预览前请先更新一次，否则预览无效</h5>";
+        echo "<h5>请注意：您正在创建一个新的配置文件，ID为<font color=red>".$json_id."</font><br>预览前请先更新一次，否则预览无效</h5>";
         $json_string = file_get_contents("./resource/common/default.json");
     }
 }
@@ -85,7 +85,7 @@ echo "<hr>请确认好您的json_id是：<input id= 'json_id' name='json_id' typ
 echo $json_id;
 echo "' style='width:30%;'><br>*若非第一次配置，请勿随意更改上面一栏以免保存错误";
 echo "<br><br><button type='submit' style='width:70px;height:30px;'>确定更新</button></div></form><button style='width:70px;height:30px;margin-left:0px;width:70px;height:30px;' onclick='preview()'>查看效果</button>";
-exit ('<script>function preview(){window.open("./resource/common/daily_info.html?json_id='.$json_id.'", "_blank", "scrollbars=yes,resizable=1,modal=false,alwaysRaised=yes,width=850,height=920");}</script>');
+exit ('<script>function preview(){window.open("./resource/common/daily_info.html?json_id='.$json_id.'", "_blank", "scrollbars=yes,resizable=1,modal=false,alwaysRaised=yes,width=1000,height=980");}</script>');
 
 ?>
 
