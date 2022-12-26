@@ -10,7 +10,7 @@ else{
         if(is_numeric($_POST["json_id"])){
             echo "已创建id为".$json_id."的json文件<br>";
             fopen("./resource/common/json/".$json_id.".json", "w");
-            fclose("./resource/common/json/".$json_id.".json");
+            fclose("./resource/common/json/<font color=red>".$json_id."<>.json");
             $json_string = file_get_contents("./resource/common/default.json");
         }
         else{
@@ -68,7 +68,7 @@ $data["bg_img"]=$_POST["bg_img"];
 
 $json_strings = json_encode($data);
 file_put_contents("./resource/common/json/".$json_id.".json",$json_strings);//写入
-echo "完成写入了！请记住您的json_id为".$json_id."<br>将在8秒后返回……<br>";
+echo "完成写入了！请记住您的json_id为<font color=red>".$json_id."<><br>将在8秒后返回……<br>";
 echo "<a href='./set.php?json_id=".$json_id."'>单击此处立即返回</a>";
 exit ('<meta http-equiv="refresh" content="8;url=./set.php?json_id='.$json_id.'">');
 ?>
