@@ -109,6 +109,7 @@ export class daily extends plugin {
   }
 
   async daily (e) {
+        await this.reply("正在拉取……");
         const puppeteer = require('puppeteer');
 
         const browser = await puppeteer.launch({
